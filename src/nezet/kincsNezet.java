@@ -4,17 +4,51 @@
  */
 package nezet;
 
+import javax.swing.JRadioButton;
+import javax.swing.JTextField;
+import kincseslada.KincsesLada;        
+import modell.kincsesLada;
+
 /**
  *
  * @author gyarfas.reka
  */
 public class kincsNezet extends javax.swing.JFrame {
-
+private KincsesLada lada;
     /**
      * Creates new form kincsNezet
      */
     public kincsNezet() {
         initComponents();
+        lada = new KincsesLada();
+    }
+
+    public void setAranyField(JTextField aranyField) {
+        
+    }
+
+    public void setArany_lada(JRadioButton arany_lada) {
+        
+    }
+
+    public void setBronzField(JTextField bronzField) {
+        this.bronzField.setText(lada.getHarmadik().getSzoveg()); 
+    }
+
+    public void setBronz_lada(JRadioButton bronz_lada) {
+        this.bronz_lada = bronz_lada;
+    }
+
+    public void setEzustField(JTextField ezustField) {
+        this.ezustField = ezustField;
+    }
+
+    public void setEzust_lada(JRadioButton ezust_lada) {
+        this.ezust_lada = ezust_lada;
+    }
+
+    public void setVisszajelzesField(JTextField visszajelzesField) {
+        this.visszajelzesField = visszajelzesField;
     }
 
     /**
@@ -26,17 +60,82 @@ public class kincsNezet extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        inditoGomb = new javax.swing.JButton();
+        ezustField = new javax.swing.JTextField();
+        aranyField = new javax.swing.JTextField();
+        bronzField = new javax.swing.JTextField();
+        ezust_lada = new javax.swing.JRadioButton();
+        arany_lada = new javax.swing.JRadioButton();
+        bronz_lada = new javax.swing.JRadioButton();
+        ellenorzesGomb = new javax.swing.JButton();
+        visszajelzesField = new javax.swing.JTextField();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        inditoGomb.setText("Indítás!");
+
+        buttonGroup1.add(ezust_lada);
+        ezust_lada.setText("jRadioButton1");
+
+        buttonGroup1.add(arany_lada);
+        arany_lada.setText("jRadioButton2");
+
+        buttonGroup1.add(bronz_lada);
+        bronz_lada.setText("jRadioButton3");
+
+        ellenorzesGomb.setText("jButton1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(107, 107, 107)
+                        .addComponent(inditoGomb, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(visszajelzesField, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(ezust_lada, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
+                                    .addComponent(ezustField, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(ellenorzesGomb)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(aranyField, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
+                                            .addComponent(arany_lada, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(bronzField, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
+                                            .addComponent(bronz_lada, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE))))))))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(inditoGomb)
+                .addGap(33, 33, 33)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ezustField, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(aranyField, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bronzField, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ezust_lada)
+                    .addComponent(arany_lada)
+                    .addComponent(bronz_lada))
+                .addGap(18, 18, 18)
+                .addComponent(ellenorzesGomb)
+                .addGap(18, 18, 18)
+                .addComponent(visszajelzesField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         pack();
@@ -78,5 +177,15 @@ public class kincsNezet extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField aranyField;
+    private javax.swing.JRadioButton arany_lada;
+    private javax.swing.JTextField bronzField;
+    private javax.swing.JRadioButton bronz_lada;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JButton ellenorzesGomb;
+    private javax.swing.JTextField ezustField;
+    private javax.swing.JRadioButton ezust_lada;
+    private javax.swing.JButton inditoGomb;
+    private javax.swing.JTextField visszajelzesField;
     // End of variables declaration//GEN-END:variables
 }
